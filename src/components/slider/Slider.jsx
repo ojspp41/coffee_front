@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./Slider.css";
 
@@ -15,8 +15,13 @@ const Slider = ({ data }) => {
   };
 
   const handleLearnMore = (id) => {
-    navigate(`/product/${id}`);
+    navigate(`/productlist/category`);
   };
+
+  // useEffect(() => {
+  //   const slideInterval = setInterval(handleNextSlide, 5000);
+  //   return () => clearInterval(slideInterval);
+  // }, []);
 
   return (
     <div className="slider">

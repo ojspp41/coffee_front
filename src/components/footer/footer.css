@@ -1,7 +1,8 @@
 .footer {
   display: flex;
-  background-color: #f1f1f1; /* Add a background color to distinguish the footer */
+  background: linear-gradient(to right, #ffffff, #ebddcb);/* Add a background color to distinguish the footer */
   padding: 20px 0; /* Add some padding to the footer */
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .fLeft, .fCenter, .fRight {
@@ -16,6 +17,7 @@
 }
 
 .fSocialContainer {
+  
   display: flex;
 }
 
