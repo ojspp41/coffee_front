@@ -1,0 +1,151 @@
+/* 전체 슬라이더 컨테이너의 스타일 */
+.slider {
+  position: relative; /* 상대적인 위치 설정 */
+  width: 100%; /* 부모 요소에 대한 너비는 100% */
+  height: 100vh; /* 뷰포트 높이의 100%로 설정하여 화면 전체를 차지 */
+  display: flex; /* 요소들을 가로로 나란히 정렬하기 위해 flex 사용 */
+  overflow: hidden; /* 넘치는 컨텐츠를 숨김 */
+  
+}
+
+/* 각 슬라이드를 감싸는 래퍼의 스타일 */
+.sliderWrapper {
+  height: 100%; /* 부모 요소에 대한 높이는 100% */
+  display: flex; /* 요소들을 가로로 나란히 정렬하기 위해 flex 사용 */
+  transition: transform 0.5s ease-in-out; /* 변화를 부드럽게 처리하기 위한 transition 효과 */
+}
+
+/* 각 슬라이드의 스타일 */
+.slide {
+  width: 100vw; /* 뷰포트 너비의 100%를 차지 */
+  height: 100vh; /* 뷰포트 높이의 100%를 차지 */
+  display: flex; /* 요소들을 가로로 나란히 정렬하기 위해 flex 사용 */
+  align-items: center; /* 수직 정렬을 위해 중앙 정렬 */
+  
+  padding: 20px; /* 내부 여백 추가 */
+  
+}
+
+/* 슬라이드 이미지를 감싸는 컨테이너의 스타일 */
+.slideImgContainer {
+  flex: 1; /* 공간을 균등하게 분배 */
+  height: 100%; /* 부모 요소에 대한 높이는 100% */
+  position: relative;
+}
+
+/* 슬라이드 이미지의 스타일 */
+.slideImg {
+  width: 100%; /* 부모 요소에 대한 너비는 100% */
+  height: 100%; /* 부모 요소에 대한 높이는 100% */
+  object-fit: cover; /* 이미지를 화면에 맞게 조절 */
+}
+
+/* 슬라이드 정보 컨테이너의 스타일 */
+.infoContainer {
+  flex: 1; /* 공간을 균등하게 분배 */
+  padding: 100px; /* 내부 여백 설정 */
+}
+
+
+
+/* 슬라이드 제목의 스타일 */
+.slideTitle {
+  font-size: 70px; /* 제목의 글꼴 크기 */
+  margin-bottom: 20px; /* 아래쪽 여백 설정 */
+  color: #6b4226; /* 커피색 텍스트 */
+}
+
+/* 슬라이드 설명의 스타일 */
+.slideDesc {
+  margin: 50px 0px; /* 상하 여백 설정 */
+  font-size: 24px; /* 설명의 글꼴 크기 */
+  font-weight: 500; /* 글꼴 두께 설정 */
+  color: #6b4226; /* 커피색 텍스트 */
+}
+
+/* 슬라이드 버튼의 공통 스타일 */
+.slideBtn {
+  padding: 10px 20px; /* 내부 여백 설정 */
+  font-size: 24px; /* 버튼의 글꼴 크기 */
+  background-color: #6b4226; /* 커피색 배경 설정 */
+  color: white; /* 글꼴 색상 설정 */
+  border: none; /* 테두리 제거 */
+  border-radius: 5px; /* 둥근 테두리 설정 */
+  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+  transition: all 0.3s ease; /* 부드러운 애니메이션 효과 */
+}
+
+/* 슬라이드 버튼 호버 시의 스타일 */
+.slideBtn:hover {
+  background-color: #865f0c; /* 호버 시 배경색 변경 */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 강도 증가 */
+  transform: translateY(-2px); /* 호버 시 약간 위로 이동 */
+}
+
+/* 슬라이드 버튼 클릭 시의 스타일 */
+.slideBtn:active {
+  background-color: #03dac6; /* 클릭 시 배경색 변경 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 클릭 시 그림자 강도 감소 */
+  transform: translateY(0); /* 클릭 시 원래 위치로 돌아옴 */
+}
+
+/* 이전, 다음 버튼의 공통 스타일 */
+.prevBtn, .nextBtn {
+  position: absolute; /* 절대 위치 설정 */
+  top: 50%; /* 부모 요소의 중앙에 위치 */
+  transform: translateY(-50%); /* 수직 중앙 정렬 */
+  background-color: rgba(0, 0, 0, 0.5); /* 배경색 설정 */
+  color: white; /* 글꼴 색상 설정 */
+  border: none; /* 테두리 제거 */
+  padding: 10px; /* 내부 여백 설정 */
+  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+  font-size: 24px; /* 버튼의 글꼴 크기 */
+  border-radius: 50%; /* 원형 테두리 설정 */
+  z-index: 10; /* 다른 요소들 위에 쌓이도록 설정 */
+}
+
+/* 이전 버튼의 위치와 스타일 */
+.prevBtn {
+  left: 10px; /* 왼쪽 여백 설정 */
+}
+
+/* 다음 버튼의 위치와 스타일 */
+.nextBtn {
+  right: 10px; /* 오른쪽 여백 설정 */
+}
+/* 반응형 스타일 */
+
+/* 태블릿 (화면 너비 768px 이하) */
+@media (max-width: 768px) {
+  .infoContainer {
+    padding: 50px;
+  }
+  .slideTitle {
+    font-size: 50px;
+  }
+  .slideDesc {
+    font-size: 20px;
+  }
+  .slideBtn {
+    font-size: 20px;
+    padding: 8px 16px;
+  }
+}
+
+/* 모바일 (화면 너비 480px 이하) */
+@media (max-width: 480px) {
+  .infoContainer {
+    padding: 20px;
+  }
+  .slideTitle {
+    font-size: 30px;
+  }
+  .slideDesc {
+    font-size: 16px;
+  }
+  .slideBtn {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+}

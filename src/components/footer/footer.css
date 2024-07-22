@@ -1,0 +1,76 @@
+.footer {
+  display: flex;
+  background-color: #f1f1f1; /* Add a background color to distinguish the footer */
+  padding: 20px 0; /* Add some padding to the footer */
+}
+
+.fLeft, .fCenter, .fRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.fDesc {
+  margin: 20px 0;
+}
+
+.fSocialContainer {
+  display: flex;
+}
+
+.fSocialIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  background-color: #3b5998; /* Add a background color to the social icons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.fTitle {
+  margin-top: 21px; /* Set the top margin to 21px */
+  margin-bottom: 30px;
+  font-size: 20px; /* Add a font size for the titles */
+  font-weight: bold; /* Make the title bold */
+}
+
+.fList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fListItem {
+  width: 50%;
+  margin-bottom: 10px; /* Adjust the margin for better spacing */
+}
+
+.fContactItem {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.fContactIcon {
+  margin-right: 10px;
+}
+
+/* Optional: Add some hover effects for better UX */
+.fSocialIcon:hover {
+  background-color: #555; /* Change the background color on hover */
+}
+
+.fListItem:hover {
+  text-decoration: underline; /* Underline the list items on hover */
+}
+
+.fContactItem:hover .fContactIcon {
+  color: #333; /* Change the color of contact icons on hover */
+}

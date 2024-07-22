@@ -1,0 +1,102 @@
+.categoryItem{
+  flex: 1;
+  margin: 5px;
+  height: 70vh;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.categoryItem:hover{
+  opacity: 0.7;
+}
+.categoryItem::before {
+  content: ""; /* 가상 요소를 생성 */
+  position: absolute; /* 부모 요소를 기준으로 위치를 절대적으로 설정 */
+  top: 0; /* 상단부터 시작 */
+  left: 0; /* 좌측부터 시작 */
+  width: 100%; /* 부모 요소의 너비에 맞춤 */
+  height: 100%; /* 부모 요소의 높이에 맞춤 */
+  background: rgba(0, 0, 0, 0.3); /* 반투명 검정색 배경 (0.5는 투명도 조절 값) */
+  z-index: 1; /* 오버레이를 이미지 위에 표시하기 위해 z-index 설정 */
+}
+.catImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.catInfo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+
+}
+.catTitle{
+  font-size: 48px;
+  color: white;
+  margin-bottom: 20px;
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 800;
+}
+.catBtn{
+  border: none;
+  padding: 10px;
+  border-color: white;
+  color: gray;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 10px;
+  
+}
+@media (max-width: 768px) {
+  .category {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categoryItem {
+    height: 50vh;
+    width: 60%;
+    margin-bottom: 50px;
+  }
+
+  .catTitle {
+    font-size: 36px;
+  }
+
+  .catBtn {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
+/* 모바일 (화면 너비 480px 이하) */
+@media (max-width: 480px) {
+  .category {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .categoryItem {
+    height: 30vh;
+    width: 60%;
+  }
+
+  .catTitle {
+    font-size: 24px;
+  }
+
+  .catBtn {
+    font-size: 14px;
+    padding: 6px;
+  }
+}
