@@ -13,3 +13,12 @@ export const authRequest = axios.create({
   baseURL: BASE_URL,         // 모든 요청에 대해 기본 URL 설정
   withCredentials: true,     // 요청과 함께 자격 증명(쿠키, 인증 헤더 등)을 보냄
 });
+authRequest.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+}, (error) => {
+  return Promise.reject(error);
+});

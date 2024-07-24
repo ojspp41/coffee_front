@@ -10,6 +10,7 @@ export const login = async (dispatch, user) => {
     const response = await publicRequest.post('/auth/login', user);
     // 로그인 성공 액션 디스패치
     dispatch(loginSuccess(response.data));
+    localStorage.setItem("token", response.data.token);
   } catch (err) {
     // 로그인 실패 액션 디스패치
     dispatch(loginFailure());

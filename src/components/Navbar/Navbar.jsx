@@ -30,9 +30,11 @@ const Navbar = ({ user, handleLogout }) => {
         <div className="navRight">
           {user ? (
             <>
-              <div className="navMenuItem">
-                <span className="navWelcome">{user.username}님 환영합니다! 😊</span>
-              </div>
+              {user.isAdmin && (
+                <div className="navMenuItem">
+                  <Link to="/admin" className="navLink">Admin Page</Link>
+                </div>
+              )}
               <div className="navMenuItem">
                 <Link to="/profile" className="navLink">Profile</Link>
               </div>
@@ -64,9 +66,11 @@ const Navbar = ({ user, handleLogout }) => {
         <div className="mobileMenu">
           {user ? (
             <>
-              <div className="navMenuItem">
-                <span className="navWelcome">{user.username}님 환영합니다! 😊</span>
-              </div>
+              {user.isAdmin && (
+                <div className="navMenuItem">
+                  <Link to="/admin" className="navLink">Admin Page</Link>
+                </div>
+              )}
               <div className="navMenuItem">
                 <Link to="/profile" className="navLink">Profile</Link>
               </div>
@@ -80,7 +84,6 @@ const Navbar = ({ user, handleLogout }) => {
                   </Link>
                 </Badge>
               </div>
-              
             </>
           ) : (
             <>
