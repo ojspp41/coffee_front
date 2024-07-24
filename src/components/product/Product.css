@@ -53,3 +53,16 @@
   color: white;
   transform: scale(1.1);
 }
+.productPrice {
+  position: absolute;
+  top: 10px; /* 원하는 위치에 맞게 조정 */
+  left: 10px; /* 원하는 위치에 맞게 조정 */
+  background-color: #6b4226; /* 배경색 추가 */
+  opacity: 0.4;
+  padding: 5px 10px; /* 여백 추가 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  z-index: 4; /* 이미지보다 앞에 나오도록 z-index 설정 */
+}

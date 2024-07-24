@@ -9,6 +9,7 @@ import Cart from './pages/Cart';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Navbar from './components/Navbar/Navbar';
+import AdminPage from './pages/AdminPage';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from './redux/userSlice';
 
@@ -49,7 +50,9 @@ function App() {
       <Router>
         <Navbar user={user} handleLogout={handleLogout} />
         <Routes>
+          
           <Route path="/" element={<Home data={data} />} />
+          <Route path="/admin/*" element={<AdminPage/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/productlist/category" element={<ProductList />} />
