@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { Search } from '@mui/icons-material';
-import './Navbar.css';
 import { Badge } from '@mui/material';
 import { ShoppingCartOutlined, Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = ({ user, handleLogout }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,19 +11,16 @@ const Navbar = ({ user, handleLogout }) => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <div className="navbar">
       <div className="navWrapper">
         <div className="navLeft">
-          <span className="navLanguage">KR</span>
-          <div className="navSearchContainer">
-            <input type="text" className="navInput" />
-            <Search />
-          </div>
-        </div>
-        <div className="navCenter">
           <h1 className="navLogo">
-            <Link to="/" className="navLink">한국유통</Link>
+            <Link to="/" className="navLink" onClick={closeMobileMenu}>한국유통</Link>
           </h1>
         </div>
         <div className="navRight">
@@ -32,17 +28,17 @@ const Navbar = ({ user, handleLogout }) => {
             <>
               {user.isAdmin && (
                 <div className="navMenuItem">
-                  <Link to="/admin" className="navLink">Admin Page</Link>
+                  <Link to="/admin" className="navLink" onClick={closeMobileMenu}>Admin Page</Link>
                 </div>
               )}
               <div className="navMenuItem">
-                <Link to="/profile" className="navLink">Profile</Link>
+                <Link to="/profile" className="navLink" onClick={closeMobileMenu}>Profile</Link>
               </div>
               <div className="navMenuItem">
-                <span className="navLink" onClick={handleLogout}>Logout</span>
+                <span className="navLink" onClick={() => { handleLogout(); closeMobileMenu(); }}>Logout</span>
               </div>
               <Badge badgeContent={3} color="secondary">
-                <Link to="/cart" className="navLink">
+                <Link to="/cart" className="navLink" onClick={closeMobileMenu}>
                   <ShoppingCartOutlined />
                 </Link>
               </Badge>
@@ -50,16 +46,16 @@ const Navbar = ({ user, handleLogout }) => {
           ) : (
             <>
               <div className="navMenuItem">
-                <Link to="/register" className="navLink">Register</Link>
+                <Link to="/register" className="navLink" onClick={closeMobileMenu}>Register</Link>
               </div>
               <div className="navMenuItem">
-                <Link to="/login" className="navLink">Login</Link>
+                <Link to="/login" className="navLink" onClick={closeMobileMenu}>Login</Link>
               </div>
             </>
           )}
         </div>
         <div className="mobileMenuIcon" onClick={handleMobileMenuToggle}>
-          {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
+          {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon className='MenuIcon' />}
         </div>
       </div>
       {isMobileMenuOpen && (
@@ -68,18 +64,18 @@ const Navbar = ({ user, handleLogout }) => {
             <>
               {user.isAdmin && (
                 <div className="navMenuItem">
-                  <Link to="/admin" className="navLink">Admin Page</Link>
+                  <Link to="/admin" className="navLink" onClick={closeMobileMenu}>Admin Page</Link>
                 </div>
               )}
               <div className="navMenuItem">
-                <Link to="/profile" className="navLink">Profile</Link>
+                <Link to="/profile" className="navLink" onClick={closeMobileMenu}>Profile</Link>
               </div>
               <div className="navMenuItem">
-                <span className="navLink" onClick={handleLogout}>Logout</span>
+                <span className="navLink" onClick={() => { handleLogout(); closeMobileMenu(); }}>Logout</span>
               </div>
               <div className="navMenuItem">
                 <Badge badgeContent={3} color="secondary">
-                  <Link to="/cart" className="navLink">
+                  <Link to="/cart" className="navLink" onClick={closeMobileMenu}>
                     <ShoppingCartOutlined />
                   </Link>
                 </Badge>
@@ -88,10 +84,10 @@ const Navbar = ({ user, handleLogout }) => {
           ) : (
             <>
               <div className="navMenuItem">
-                <Link to="/register" className="navLink">Register</Link>
+                <Link to="/register" className="navLink" onClick={closeMobileMenu}>Register</Link>
               </div>
               <div className="navMenuItem">
-                <Link to="/login" className="navLink">Login</Link>
+                <Link to="/login" className="navLink" onClick={closeMobileMenu}>Login</Link>
               </div>
             </>
           )}

@@ -1,144 +1,98 @@
-/* Navbar.css */
-
+/* 기본 스타일 */
 .navbar {
-  width: 100%;
-  height: 78px;
-  border-bottom: 0.5px solid lightgray;
-  position: fixed;
-  top: 0;
   background: linear-gradient(to right, #f0e5d6, #bb8246);
-  box-shadow: 0 7px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  border-radius: 0 0 10px 10px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
 }
 
 .navWrapper {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0px 20px;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+
+  padding: 0 24px;
 }
 
 .navLeft {
-  flex: 1;
   display: flex;
   align-items: center;
-}
-
-.navLanguage {
-  
-  font-size: 10px;
-}
-
-.navSearchContainer {
-  border: 1px solid lightgray;
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-.navSearchContainer:hover {
-  border: 1px solid #6b4226;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.navInput {
-  border: none;
-  background-color: #f1e2cf;
-}
-
-.navInput:focus {
-  outline: none;
 }
 
 .navCenter {
-  flex: 1;
-  text-align: center;
-  cursor: pointer;
-}
-
-.navRight {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.navMenuItem {
-  font-size: 14px;
-  cursor: pointer;
-  margin: 0 15px;
-}
-
-.navLink {
-  font-family: "Sevillana", cursive;
-  text-decoration: none;
-  color: inherit;
-  font-size: 1.6rem;
-  transition: color 0.3s ease;
-}
-
-.navLink:hover {
-  color: #6b4226;
+  display: none; /* 로고를 왼쪽으로 옮기기 위해 중앙 영역 숨김 */
 }
 
 .navLogo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+  color: #fff;
   text-decoration: none;
+  font-size: 2rem;
 }
 
-.navWelcome {
-  font-size: 16px;
-  margin-right: 20px;
-  color: #333;
-  font-weight: bold;
-  cursor: default;
+.navRight {
+  display: flex;
+  align-items: center;
+}
+
+.navMenuItem {
+  margin-left: 20px;
+}
+
+.navLink {
+  color: #fff;
+  text-decoration: none;
 }
 
 .mobileMenuIcon {
   display: none;
+  color: #fff;
   cursor: pointer;
-  font-size: 30px;
 }
 
-/* 반응형 스타일 */
-
-/* 태블릿 및 모바일 (화면 너비 768px 이하) */
-@media (max-width: 768px) {
+/* 모바일 반응형 스타일 */
+@media screen and (max-width: 960px) {
+  .mobileMenuIcon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+  }
   .navRight {
     display: none;
   }
 
-  .mobileMenuIcon {
-    display: block;
-    padding: 15px;
-    margin-top: 10px;
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #f0e5d6, #bb8246);
+    padding-top: 20px;
+    z-index: 1;
   }
-}
+  .navWrapper{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* 흐릿한 경계선 */
+    z-index: 2;
+  }
+  .navMenuItem {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    padding-bottom: 10px; /* 텍스트와 경계선 사이의 간격 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* 흐릿한 경계선 */
+  }
 
-/* 모바일 메뉴 스타일 */
-.mobileMenu {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: white;
-  width: 100%;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.mobileMenu .navMenuItem {
-  width: 100%;
-  padding: 10px 0;
-  border-bottom: 1px solid lightgray;
-}
-
-.mobileMenu .navSearchContainer {
-  margin-left: 0;
-  width: 100%;
+  .navLink {
+    font-size: 1.5rem;
+  }
 }
