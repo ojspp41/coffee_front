@@ -64,7 +64,6 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <Newletter />
       <Footer />
     </div>
   );

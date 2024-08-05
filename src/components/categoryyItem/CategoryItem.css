@@ -96,21 +96,35 @@
 @media (max-width: 480px) {
   .category {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
     gap: 10px;
+    justify-items: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
   }
 
   .categoryItem {
-    height: 30vh;
-    width: 60%;
+    height: 20vh;
+    width: 95%;
+    display: flex;
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    margin-bottom: 0px;
+  }
+  .catImg {
+    width: 90%; /* Ensure the image takes full width of its container */
+    height: auto; /* Maintain aspect ratio */
   }
 
+  .catInfo {
+    text-align: center; /* Center text inside the info container */
+  }
   .catTitle {
-    font-size: 24px;
+    font-size: 14px;
   }
 
   .catBtn {
-    font-size: 14px;
-    padding: 6px;
+    font-size: 10px;
+    padding: 5px;
   }
 }

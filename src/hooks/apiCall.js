@@ -1,5 +1,20 @@
 import { publicRequest } from './requestMethod.js';
 import { loginFailure, loginStart, loginSuccess } from '../redux/userSlice.js';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { authRequest } from './requestMethod.js';
+
+export const addProduct = createAsyncThunk('product/addProduct', async (product, thunkAPI) => {
+  try {
+    const response = await authRequest.post('/api/products', product, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.response.data);
+  }
+});
 
 // 로그인 API 호출 함수
 export const login = async (dispatch, user) => {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Badge } from '@mui/material';
-import { ShoppingCartOutlined, Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
+import { ShoppingCartOutlined, Menu as MenuIcon, Close as CloseIcon ,Phone as PhoneIcon} from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
@@ -21,6 +21,10 @@ const Navbar = ({ user, handleLogout }) => {
         <div className="navLeft">
           <h1 className="navLogo">
             <Link to="/" className="navLink" onClick={closeMobileMenu}>한국유통</Link>
+            <a href="tel:010-2242-4447" className="phoneIcon">
+              <PhoneIcon />
+              <span>상담연결</span>
+            </a>
           </h1>
         </div>
         <div className="navRight">

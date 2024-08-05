@@ -1,18 +1,6 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { authRequest } from '../hooks/requestMethod';
+// src/redux/productSlice.js
+import { createSlice} from '@reduxjs/toolkit';
 
-// 제품 추가 비동기 액션 생성
-export const addProduct = createAsyncThunk(
-  'product/addProduct',
-  async (product, { rejectWithValue }) => {
-    try {
-      const response = await authRequest.post('/products', product);
-      return response.data;
-    } catch (err) {
-      return rejectWithValue(err.response.data);
-    }
-  }
-);
 
 const productSlice = createSlice({
   name: 'product',

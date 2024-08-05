@@ -10,9 +10,13 @@ const AddProduct = () => {
   const { isFetching, error } = useSelector(state => state.product);
 
   const handleAddProduct = async (product) => {
-    await dispatch(addProduct(product));
+    const formData = new FormData();
+    for (let key in product) {
+      formData.append(key, product[key]);
+    }
+    await dispatch(addProduct(formData));
     if (!error) {
-      navigate('/admin');
+      navigate('/admin/list');
     }
   };
 

@@ -76,3 +76,33 @@
 .fContactItem:hover .fContactIcon {
   color: #333; /* Change the color of contact icons on hover */
 }
+/* 모바일 반응형 스타일 */
+@media (max-width: 480px) {
+  .footer {
+    flex-direction: column; /* Stack the footer sections vertically */
+    align-items: center; /* Center align the items */
+    text-align: center; /* Center align the text */
+  }
+  .fTitle{
+    margin-top: 0px;
+  }
+
+  .fLeft, .fCenter, .fRight {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .fSocialContainer {
+    justify-content: center; /* Center align the social icons */
+    margin-bottom: 20px; /* Add some space below the social icons */
+  }
+
+  .fList {
+    flex-direction: column; /* Stack the list items vertically */
+    align-items: center; /* Center align the list items */
+  }
+
+  .fListItem {
+    width: 100%; /* Make list items take full width */
+    text-align: center; /* Center align the list items */
+  }
+}

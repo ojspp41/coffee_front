@@ -39,10 +39,6 @@
   margin: 50px 0;
 }
 
-.productPrice {
-  font-size: 30px;
-  font-weight: bold;
-}
 
 .productFilterContainer {
   margin-top: 50px;
@@ -127,4 +123,83 @@
   font-size: 20px;
   font-weight: bold;
   
+}
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .productWrapper {
+    flex-direction: column;
+    margin-top: 20px; /* Adjust margin for mobile */
+    box-shadow: none; /* Remove box shadow for mobile */
+  }
+
+  .productImgContainer {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px; /* Add padding for better spacing */
+  }
+
+  .productImg {
+    width: 80%;
+  }
+
+  .productInfoContainer {
+    margin-right: auto;
+    width: 74%;
+    padding: 20px; /* Adjust padding for mobile */
+    margin-left: auto;
+    margin-bottom: 20px;
+    box-shadow: none; /* Remove box shadow for mobile */
+  }
+
+  .productTitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .productDesc {
+    margin: 20px 0;
+    font-size: 16px;
+  }
+
+  .productFilterContainer {
+    margin-top: 20px;
+  }
+
+  .filterText {
+    font-size: 18px;
+  }
+
+  .filterSelect {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .quantityContainer {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .quantityButtonContainer {
+    margin-bottom: 10px; /* Add margin for better spacing */
+  }
+
+  .quantityButton,
+  .quantity {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .addToCartButton {
+    width: 100%;
+    text-align: center;
+    margin-left: 0; /* Remove left margin */
+    margin-top: 10px; /* Add top margin for spacing */
+  }
+
+  .productPrice_product,
+  .totalPrice {
+    font-size: 18px;
+  }
 }

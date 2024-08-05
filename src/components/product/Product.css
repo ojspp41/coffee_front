@@ -66,3 +66,23 @@
   color: #ffffff;
   z-index: 4; /* 이미지보다 앞에 나오도록 z-index 설정 */
 }
+/* 모바일 (화면 너비 480px 이하) */
+@media (max-width: 480px) {
+  .product {
+    flex-basis: calc(50% - 20px); /* Two products per row, accounting for margin */
+    height: 200px; /* Adjust the height for smaller screens */
+    padding: 5px;
+  }
+
+  .productImg {
+    width: 100%;
+ /* Ensure the image takes full height of its container */
+  }
+  
+  .productPrice {
+    top: 5px; /* 원하는 위치에 맞게 조정 */
+    left: 5px; /* 원하는 위치에 맞게 조정 */
+    
+    font-size: 0.8rem;/
+  }
+}

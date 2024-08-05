@@ -1,0 +1,6 @@
+/* Home.css */
+@media (max-width: 500px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
