@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import ProductForm from './ProductForm';
-import { addProduct } from '../../redux/productSlice';
+import { addProduct } from '../../hooks/apiCall';
 
 const AddProduct = () => {
   const navigate = useNavigate();
@@ -14,9 +14,17 @@ const AddProduct = () => {
     for (let key in product) {
       formData.append(key, product[key]);
     }
-    await dispatch(addProduct(formData));
-    if (!error) {
-      navigate('/admin/list');
+    
+    try {
+      const resultAction = await dispatch(addProduct(formData));
+      if (addProduct.fulfilled.match(resultAction)) {
+        navigate('/admin/list');
+      } else if (addProduct.rejected.match(resultAction)) {
+        // 에러 처리
+        console.error('Failed to add product:', resultAction.error);
+      }
+    } catch (err) {
+      console.error('An error occurred:', err);
     }
   };
 

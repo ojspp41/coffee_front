@@ -8,14 +8,14 @@ import './AdminPage.css';
 
 const AdminPage = () => {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/admin/list">Product List</Link>
+    <div className="admin-container">
+      <nav className="admin-nav">
+        <ul className="admin-nav-list">
+          <li className="admin-nav-item">
+            <Link to="/admin/list" className="admin-nav-link">Product List</Link>
           </li>
-          <li>
-            <Link to="/admin/add">Add Product</Link>
+          <li className="admin-nav-item">
+            <Link to="/admin/add" className="admin-nav-link">Add Product</Link>
           </li>
         </ul>
       </nav>

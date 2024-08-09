@@ -1,6 +1,5 @@
-// src/redux/productSlice.js
-import { createSlice} from '@reduxjs/toolkit';
-
+import { createSlice } from '@reduxjs/toolkit';
+import { addProduct } from '../hooks/apiCall';
 
 const productSlice = createSlice({
   name: 'product',
@@ -20,9 +19,9 @@ const productSlice = createSlice({
         state.isFetching = false;
         state.products.push(action.payload);
       })
-      .addCase(addProduct.rejected, (state) => {
+      .addCase(addProduct.rejected, (state, action) => {
         state.isFetching = false;
-        state.error = true;
+        state.error = action.payload || true;
       });
   },
 });

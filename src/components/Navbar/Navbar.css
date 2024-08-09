@@ -15,7 +15,6 @@
   height: 80px;
   z-index: 1;
   width: 100%;
-
   padding: 0 24px;
 }
 
@@ -29,16 +28,17 @@
 }
 
 .navLogo {
-  
   text-decoration: none;
   font-size: 2rem;
 }
+
 .phoneIcon {
   color: black;
   margin-left: 10px;
   align-items: center;
   text-decoration-line: none; 
 }
+
 .phoneIcon span {
   color: gray; /* Text color */
   font-size: 0.6rem; /* Text size */
@@ -46,6 +46,7 @@
   text-decoration-line: none; /* Remove underline */
   font-style: italic; /* Italic text */
 }
+
 .navRight {
   display: flex;
   align-items: center;
@@ -56,21 +57,23 @@
 }
 
 .navLink {
-  font-family: "Sevillana", cursive;/* Elegant custom font */
+  font-family: "Sevillana", cursive; /* Elegant custom font */
   font-size: 2.5rem;
   font-weight: bold;
-  color:#6b4226;
+  color: #6b4226;
   text-decoration: none;
   letter-spacing: 2px; /* Add some spacing between letters */
   transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
 }
+
 .navLink:hover {
   color: gray; /* Change to a gold color on hover */
   transform: scale(1.1); /* Slightly enlarge the logo on hover */
 }
+
 .mobileMenuIcon {
   display: none;
-  color:#6b4226;
+  color: #6b4226;
   cursor: pointer;
 }
 
@@ -83,8 +86,8 @@
     right: 0;
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
-    
   }
+
   .navRight {
     display: none;
   }
@@ -93,7 +96,6 @@
     display: flex;
     flex-direction: column;
     width: 96%;
-    
     position: absolute;
     top: 80px;
     left: 50%;
@@ -101,11 +103,22 @@
     background: linear-gradient(to right, #f0e5d6, #bb8246);
     padding-top: 20px;
     z-index: 100;
+    overflow: hidden;
+    max-height: 0px;
+
+    transition: max-height 0.5s ease-in-out; /* 부드러운 트랜지션 */
   }
-  .navWrapper{
+
+  .mobileMenu.open {
+    max-height: 500px; /* 메뉴가 완전히 열릴 때의 최대 높이 */
+
+  }
+
+  .navWrapper {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* 흐릿한 경계선 */
     z-index: 102;
   }
+
   .navMenuItem {
     width: 100%;
     text-align: center;
@@ -117,4 +130,22 @@
   .navLink {
     font-size: 1.5rem;
   }
+}
+.kakao-login-button {
+  background-color: #FEE500; /* 카카오톡의 노란색 */
+  color: #000000; /* 검정색 텍스트 */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.kakao-login-button:hover {
+  background-color: #E5C900; /* 버튼 호버 시 색상 변경 */
+}
+
+.kakao-login-button:focus {
+  outline: none; /* 포커스 시 외곽선 제거 */
 }
